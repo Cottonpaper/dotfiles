@@ -1,8 +1,8 @@
 /*
  * REQUIRES:
  *      DMENU
- *      
- *
+ *      Alpha Patch
+ *      Fullgaps Patch
  */
 
 
