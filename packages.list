@@ -8,3 +8,7 @@ gzip
 rust
 ttf-ibm-plex
 ttf-fira-code
+gcc
+git
+rofi
+qtile
