@@ -9,10 +9,12 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+browser = "firefox"
 mod = "mod4"
 terminal = "alacritty"
-wallpaper_path = "~/Downloads/22.png"
 runner = "rofi -show run"
+
+wallpaper_path = "~/Downloads/22.png"
 colors = colors.GruvboxDark
 
 keys = [
@@ -22,6 +24,8 @@ keys = [
     Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
+    Key([mod], "p", lazy.spawn(runner), desc="Launch a program"),
 
     # Move Windows
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
@@ -38,13 +42,8 @@ keys = [
 
     # Layout
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key(
-        [mod], "f", lazy.window.toggle_fullscreen(),
-        desc="Toggle fullscreen on the focused window",
-    ),
-    Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
-
-    Key([mod], "p", lazy.spawn(runner), desc="Spawn a command using a prompt widget"),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
+    Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window")
 ]
 
 screens = [
@@ -139,7 +138,7 @@ mouse = [
 ]
 
 dgroups_key_binder = None
-dgroups_app_rules = []  # type: list
+dgroups_app_rules = []
 follow_mouse_focus = False
 bring_front_click = False
 floats_kept_above = True
