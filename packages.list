@@ -1,10 +1,15 @@
 base-devel
+cmake
+ninja
+curl
 gcc
 rust
 git
 xorg
 unzip
 gzip
+ripgrep
+fd
 
 picom
 neovim

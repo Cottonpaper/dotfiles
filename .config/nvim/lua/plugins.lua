@@ -1,27 +1,21 @@
-vim.g.mapleader = " "
-
-vim.opt.nu = true
-vim.opt.relativenumber = true
-vim.opt.tabstop = 4
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.smartindent = true
-vim.opt.scrolloff = 10
-
 require("lazy").setup({
-	'sainnhe/gruvbox-material',
+    'sainnhe/gruvbox-material',
 
     {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 
-    'nvim-treesitter/nvim-treesitter'
-})
+    'nvim-treesitter/nvim-treesitter',
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
 
-vim.g.gruvbox_material_background = 'hard'
-vim.g.gruvbox_material_transparent_background = 2
-vim.cmd([[colorscheme gruvbox-material]])
+    {
+    'nvim-telescope/telescope.nvim', tag = '0.1.6',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+    }
+})
 
 require("lualine").setup({
     options = {
@@ -29,6 +23,8 @@ require("lualine").setup({
         theme = 'gruvbox-material'
     }
 })
+
+require("mason").setup()
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
