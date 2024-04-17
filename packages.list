@@ -5,11 +5,15 @@ curl
 gcc
 rust
 git
+github-cli
 xorg
 unzip
 gzip
 ripgrep
 fd
+stow
+tree
+npm
 
 picom
 neovim
@@ -21,3 +25,4 @@ python-psutil
 
 ttf-ibmplex-mono-nerd
 ttf-firacode-nerd
+ttf-jetbrains-mono-nerd

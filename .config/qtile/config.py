@@ -7,14 +7,13 @@ import colors
 from libqtile import bar, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
 browser = "firefox"
 mod = "mod4"
 terminal = "alacritty"
 runner = "rofi -show run"
 
-wallpaper_path = "~/Downloads/22.png"
+wallpaper_path = "~/Wallpapers/22.png"
 colors = colors.GruvboxDark
 
 keys = [
@@ -121,7 +120,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    background = '1d2021',
+    background='1d2021',
     foreground = colors[10],
     font = "IBM Plex Mono Bold",
     fontsize = 16,
