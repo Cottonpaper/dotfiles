@@ -1,35 +1,38 @@
 require("lazy").setup({
-    'sainnhe/gruvbox-material',
-    'nvim-tree/nvim-web-devicons',
-
-    'nvim-lualine/lualine.nvim',
-
-    'nvim-treesitter/nvim-treesitter',
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-    'neovim/nvim-lspconfig',
-
-    {
-    'nvim-telescope/telescope.nvim', tag = '0.1.6',
-    dependencies = { 'nvim-lua/plenary.nvim' }
-    }
+	'nvim-tree/nvim-web-devicons',
+	'folke/tokyonight.nvim',
+	'folke/todo-comments.nvim',
+	'akinsho/toggleterm.nvim',
+	'cohama/lexima.vim',
+	'nvim-lualine/lualine.nvim',
+	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
 })
 
 require("lualine").setup({
     options = {
-        icons_enabled = true,
-        theme = 'gruvbox-material'
+        icons_enabled = true
     }
 })
 
-require("nvim-treesitter.configs").setup{
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+require("tokyonight").setup({
+	style = "night",
+	transparent = true,
+	lualine_bold = true
+})
 
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
   sync_install = false,
   auto_install = true,
 
+  ignore_install = { "javascript" },
   highlight = {
     enable = true,
+
+    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+    -- the name of the parser)
+    -- list of language that will be disabled
     disable = { "c", "rust" },
     -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
     disable = function(lang, buf)

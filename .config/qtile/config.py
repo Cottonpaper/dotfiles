@@ -13,8 +13,8 @@ mod = "mod4"
 terminal = "alacritty"
 runner = "rofi -show run"
 
-wallpaper_path = "~/Wallpapers/22.png"
-colors = colors.GruvboxDark
+wallpaper_path = "~/Wallpapers/7.png"
+colors = colors.TokyoNightNight
 
 keys = [
 
@@ -27,61 +27,68 @@ keys = [
     Key([mod], "p", lazy.spawn(runner), desc="Launch a program"),
 
     # Move Windows
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
+        desc="Move window to the left"),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
+        desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(),
+        desc="Move window focus to other window"),
 
     # Change Window Sizes
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
+    Key([mod, "control"], "h", lazy.layout.grow_left(),
+        desc="Grow window to the left"),
+    Key([mod, "control"], "l", lazy.layout.grow_right(),
+        desc="Grow window to the right"),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
 
     # Layout
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
-    Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window")
+    Key([mod], "f", lazy.window.toggle_fullscreen(),
+        desc="Toggle fullscreen on the focused window"),
+    Key([mod], "t", lazy.window.toggle_floating(),
+        desc="Toggle floating on the focused window")
 ]
 
 screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(length = 6),
+                widget.Spacer(length=6),
                 widget.GroupBox(
-                    disable_drag = True,
-                    borderwidth = 0,
-                    ),
+                    disable_drag=True,
+                    borderwidth=0,
+                ),
 
                 widget.Spacer(),
 
                 widget.CPU(
-                    format = 'CPU = {load_percent}% ',
-                    ),
-                widget.Sep(linewidth = 2),
+                    format='CPU = {load_percent}% ',
+                ),
+                widget.Sep(linewidth=2),
 
                 widget.Memory(
-                    format = '{MemUsed: .0f}{mm} /{MemTotal: .0f}{mm} '
-                    ),
-                widget.Sep(linewidth = 2),
+                    format='{MemUsed: .0f}{mm} /{MemTotal: .0f}{mm} '
+                ),
+                widget.Sep(linewidth=2),
 
                 widget.Systray(),
-                widget.Sep(linewidth = 2),
+                widget.Sep(linewidth=2),
 
                 widget.Clock(format=" %m-%d-%Y %I:%M "),
 
-                widget.Spacer(length = 6),
+                widget.Spacer(length=6),
             ],
-            32, # Bar Size
-            margin = [14, 14, 0, 14],
-            border_color = '#89b482',
-            border_width = 2,
-            opacity = 0.90
+            32,  # Bar Size
+            margin=[14, 14, 0, 14],
+            border_color="#394b70",
+            border_width=2,
+            opacity=0.90
         ),
-        wallpaper = wallpaper_path,
-        wallpaper_mode = 'stretch',
+        wallpaper=wallpaper_path,
+        wallpaper_mode='stretch',
     ),
 ]
 
@@ -101,7 +108,8 @@ for i in groups:
                 [mod, "shift"],
                 i.name,
                 lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
+                desc="Switch to & move focused window to group {}".format(
+                    i.name),
             ),
             # Move Window to Group(i)
             Key([mod, "control"], i.name, lazy.window.togroup(i.name),
@@ -111,28 +119,30 @@ for i in groups:
 
 layouts = [
     layout.Columns(
-        border_focus = colors[18],
-        border_normal = colors[0],
-        border_width = 3,
-        margin = 14,
-        ),
+        border_focus=colors[3],
+        border_normal=colors[0],
+        border_width=3,
+        margin=14,
+    ),
     layout.Max()
 ]
 
 widget_defaults = dict(
     background='1d2021',
-    foreground = colors[10],
-    font = "IBM Plex Mono Bold",
-    fontsize = 16,
-    padding = 6,
+    foreground=colors[1],
+    font="IBM Plex Mono Bold",
+    fontsize=16,
+    padding=6,
 )
 extension_defaults = widget_defaults.copy()
 
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Drag([mod], "Button1", lazy.window.set_position_floating(),
+         start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(),
+         start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
@@ -168,7 +178,8 @@ for vt in range(1, 8):
         Key(
             ["control", "mod1"],
             f"f{vt}",
-            lazy.core.change_vt(vt).when(func=lambda: qtile.core.name == "wayland"),
+            lazy.core.change_vt(vt).when(
+                func=lambda: qtile.core.name == "wayland"),
             desc=f"Switch to VT{vt}",
         )
     )

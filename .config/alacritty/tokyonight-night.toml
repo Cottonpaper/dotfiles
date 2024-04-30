@@ -1,8 +1,6 @@
-# Colors (Gruvbox Material Hard Dark)
-
 # Default colors
 [colors.primary]
-background = '#1d2021'
+background = '#1a1b26'
 foreground = '#d4be98'
 
 # Normal colors
