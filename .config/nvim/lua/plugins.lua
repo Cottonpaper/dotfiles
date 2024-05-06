@@ -2,7 +2,7 @@ require("lazy").setup({
 	'nvim-tree/nvim-web-devicons',
 	'folke/tokyonight.nvim',
 	'folke/todo-comments.nvim',
-	'akinsho/toggleterm.nvim',
+	{'akinsho/toggleterm.nvim', version = "*", config = true},
 	'cohama/lexima.vim',
 	'nvim-lualine/lualine.nvim',
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
