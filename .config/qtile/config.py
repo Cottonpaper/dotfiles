@@ -14,17 +14,20 @@ terminal = "alacritty"
 runner = "rofi -show run"
 
 wallpaper_path = "~/Wallpapers/7.png"
-colors = colors.TokyoNightNight
+colors = colors.ActualTokyoNight
 
 keys = [
 
     # Actions
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
     Key([mod], "p", lazy.spawn(runner), desc="Launch a program"),
+    Key([mod], "s", lazy.spawn("spotify"), desc="Launch spotify"),
+    Key([mod], "d", lazy.spawn("discord"), desc="Launch discord"),
+    Key([mod], "n", lazy.spawn("steam"), desc="Launch steam"),
 
     # Move Windows
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
@@ -77,13 +80,12 @@ screens = [
                 widget.Systray(),
                 widget.Sep(linewidth=2),
 
-                widget.Clock(format=" %m-%d-%Y %I:%M "),
+                widget.Clock(format="%m-%d-%Y %I:%M"),
 
-                widget.Spacer(length=6),
             ],
             32,  # Bar Size
             margin=[14, 14, 0, 14],
-            border_color="#394b70",
+            border_color=colors[3],
             border_width=2,
             opacity=0.90
         ),
@@ -128,7 +130,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    background='1d2021',
+    background=colors[0],
     foreground=colors[1],
     font="IBM Plex Mono Bold",
     fontsize=16,

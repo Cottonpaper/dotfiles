@@ -13,6 +13,8 @@ alias vim='nvim'
 alias update='sudo pacman -Syu'
 alias inpac='sudo pacman -S'
 alias tree='tree -laC --gitignore -I .git'
+alias findfont='fc-list : family style | sort | grep -i '
+alias listfonts='fc-list : family style | sort '
 
 # ANSI color escape codes
 BLACK='\e[30m'
