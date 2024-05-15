@@ -8,6 +8,20 @@ require("lazy").setup({
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
 })
 
+require("toggleterm").setup({
+	direction = "vertical",
+	size = function(term)
+		if term.direction == "horizontal" then
+			return 14
+		elseif term.direction == "vertical" then
+			return vim.o.columns * 0.3
+		end
+	end,
+	open_mapping = [[<c-\>]],
+	hide_numbers = true,
+	autochdir = false,
+})
+
 require("lualine").setup({
     options = {
         icons_enabled = true

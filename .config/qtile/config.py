@@ -14,7 +14,7 @@ terminal = "alacritty"
 runner = "rofi -show run"
 
 wallpaper_path = "~/Wallpapers/7.png"
-colors = colors.ActualTokyoNight
+colors = colors.TokyoNight
 
 keys = [
 
@@ -86,7 +86,7 @@ screens = [
             32,  # Bar Size
             margin=[14, 14, 0, 14],
             border_color=colors[3],
-            border_width=2,
+            border_width=0,
             opacity=0.90
         ),
         wallpaper=wallpaper_path,
@@ -123,7 +123,7 @@ layouts = [
     layout.Columns(
         border_focus=colors[3],
         border_normal=colors[0],
-        border_width=3,
+        border_width=0,
         margin=14,
     ),
     layout.Max()

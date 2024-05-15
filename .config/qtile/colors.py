@@ -1,4 +1,4 @@
-ActualTokyoNight = [
+TokyoNight = [
     "#1a1b26",      # bg [0]
     "#d4be98",      # fg [1]
 
