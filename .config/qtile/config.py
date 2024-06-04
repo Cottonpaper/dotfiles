@@ -13,8 +13,8 @@ mod = "mod4"
 terminal = "alacritty"
 runner = "rofi -show run"
 
-wallpaper_path = "~/Wallpapers/7.png"
-colors = colors.TokyoNight
+wallpaper_path = "~/Wallpapers/003.jpg"
+colors = colors.EverforestNight
 
 keys = [
 

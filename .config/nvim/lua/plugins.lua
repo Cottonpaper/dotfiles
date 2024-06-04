@@ -1,25 +1,33 @@
 require("lazy").setup({
-	'nvim-tree/nvim-web-devicons',
-	'folke/tokyonight.nvim',
-	'folke/todo-comments.nvim',
-	{'akinsho/toggleterm.nvim', version = "*", config = true},
-	'cohama/lexima.vim',
-	'nvim-lualine/lualine.nvim',
-	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+    'nvim-tree/nvim-web-devicons',
+    'folke/tokyonight.nvim',
+
+    {'sainnhe/everforest',
+        config = function()
+            vim.g.everforest_transparent_background = 1
+        end
+    },
+
+    'folke/todo-comments.nvim',
+    'windwp/nvim-ts-autotag',
+    {'akinsho/toggleterm.nvim', version = "*", config = true},
+    'cohama/lexima.vim',
+    'nvim-lualine/lualine.nvim',
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
 })
 
 require("toggleterm").setup({
-	direction = "vertical",
-	size = function(term)
-		if term.direction == "horizontal" then
-			return 14
-		elseif term.direction == "vertical" then
-			return vim.o.columns * 0.3
-		end
-	end,
-	open_mapping = [[<c-\>]],
-	hide_numbers = true,
-	autochdir = false,
+    direction = "vertical",
+    size = function(term)
+        if term.direction == "horizontal" then
+            return 14
+        elseif term.direction == "vertical" then
+            return vim.o.columns * 0.4
+        end
+    end,
+    open_mapping = [[<c-\>]],
+    hide_numbers = true,
+    autochdir = false,
 })
 
 require("lualine").setup({
@@ -27,18 +35,20 @@ require("lualine").setup({
         icons_enabled = true
     }
 })
-
 require("tokyonight").setup({
-	style = "night",
-	transparent = true,
-	lualine_bold = true
+    style = "night",
+    transparent = true,
+    lualine_bold = true
 })
 
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter.configs'.setup{
   ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
   sync_install = false,
   auto_install = true,
 
+  autotag = {
+      enable = true
+  },
   ignore_install = { "javascript" },
   highlight = {
     enable = true,

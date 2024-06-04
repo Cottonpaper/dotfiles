@@ -12,4 +12,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("init")
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme everforest]]
