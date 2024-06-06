@@ -12,6 +12,7 @@ browser = "firefox"
 mod = "mod4"
 terminal = "alacritty"
 runner = "rofi -show run"
+music = "spotify-launcher"
 
 wallpaper_path = "~/Wallpapers/003.jpg"
 colors = colors.EverforestNight
@@ -25,7 +26,7 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
     Key([mod], "p", lazy.spawn(runner), desc="Launch a program"),
-    Key([mod], "s", lazy.spawn("spotify"), desc="Launch spotify"),
+    Key([mod], "s", lazy.spawn(music), desc="Launch spotify"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch discord"),
     Key([mod], "n", lazy.spawn("steam"), desc="Launch steam"),
 
@@ -59,28 +60,47 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(length=6),
+                widget.Spacer(length=8),
                 widget.GroupBox(
                     disable_drag=True,
                     borderwidth=0,
                 ),
 
                 widget.Spacer(),
+                widget.TextBox(
+                    "",
+                    foreground='1db954',
+                    fontsize=22
+                ),
+                widget.Mpris2(
+                    format='{xesam:artist} - {xesam:title}',
+                    font='Circular Std Bold',
+                    foreground='1db954',
+                    paused_text='{xesam:artist} - {xesam:title}'
+                ),
+                widget.Spacer(),
 
                 widget.CPU(
-                    format='CPU = {load_percent}% ',
+                    format=' {load_percent}%',
+                    foreground='a7c080'
                 ),
-                widget.Sep(linewidth=2),
 
                 widget.Memory(
-                    format='{MemUsed: .0f}{mm} /{MemTotal: .0f}{mm} '
+                    format=' {MemUsed:1.0f}/{MemTotal:1.0f}',
+                    foreground='7fbbb3'
                 ),
-                widget.Sep(linewidth=2),
 
                 widget.Systray(),
-                widget.Sep(linewidth=2),
 
-                widget.Clock(format="%m-%d-%Y %I:%M"),
+                widget.Clock(
+                    format=" %m/%d",
+                    foreground='e67e80'
+                ),
+                widget.Clock(
+                    format=" %I:%M",
+                    foreground='dbbc7f'
+                ),
+                widget.Spacer(length=8)
 
             ],
             32,  # Bar Size
@@ -132,9 +152,9 @@ layouts = [
 widget_defaults = dict(
     background=colors[0],
     foreground=colors[1],
-    font="IBM Plex Mono Bold",
-    fontsize=16,
-    padding=6,
+    font="MartianMono Nerd Font",
+    fontsize=18,
+    padding=10,
 )
 extension_defaults = widget_defaults.copy()
 

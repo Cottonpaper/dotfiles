@@ -23,7 +23,9 @@ firefox
 rofi
 qtile
 python-psutil
+python-dbus-next
 
 ttf-ibmplex-mono-nerd
 ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
+ttf-caskaydia-code-nerd

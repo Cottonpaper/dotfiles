@@ -15,5 +15,5 @@ EverforestNight = [
     "#475258",      # black [2]
     "#7fbbb3",      # blue [3]
     "#d699b6",      # magenta [4]
-    "#d3c6aa",      #white [5]
+    "#d3c6aa",      # white [5]
 ]
