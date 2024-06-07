@@ -2,6 +2,8 @@ import = [ "~/.config/alacritty/everforest_dark.toml" ]
 
 [font]
 size = 14
+offset.y = 1
+offset.x = 0
 
 [font.normal]
 # family = "JetBrainsMono Nerd Font"

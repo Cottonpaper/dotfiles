@@ -60,7 +60,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(length=8),
+                widget.Spacer(length=14),
                 widget.GroupBox(
                     disable_drag=True,
                     borderwidth=0,
@@ -80,18 +80,18 @@ screens = [
                 ),
                 widget.Spacer(),
 
+                widget.Net(
+                    format='{down:.0f}{down_suffix}󱦳󱦲{up:.0f}{up_suffix}',
+                    foreground='d699b6'
+                ),
                 widget.CPU(
                     format=' {load_percent}%',
                     foreground='a7c080'
                 ),
-
                 widget.Memory(
                     format=' {MemUsed:1.0f}/{MemTotal:1.0f}',
                     foreground='7fbbb3'
                 ),
-
-                widget.Systray(),
-
                 widget.Clock(
                     format=" %m/%d",
                     foreground='e67e80'
@@ -100,7 +100,14 @@ screens = [
                     format=" %I:%M",
                     foreground='dbbc7f'
                 ),
-                widget.Spacer(length=8)
+                widget.Systray(),
+                widget.Spacer(14),
+                widget.QuickExit(
+                    countdown_start=4,
+                    countdown_format='{}',
+                    default_text='⏻'
+                ),
+                widget.Spacer(length=14)
 
             ],
             32,  # Bar Size
