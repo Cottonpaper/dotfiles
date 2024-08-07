@@ -1,5 +1,5 @@
 <p align="center"><b>DOTFILES</b></p>
-<p align="center"><sup>by <ins><i>Cottonpaper</ins></sup></i></p>
+<p align="center"><sup>by <i>Cottonpaper</sup></i></p>
 
 ## QUICKSTART
 
