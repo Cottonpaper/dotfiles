@@ -67,17 +67,17 @@ screens = [
                 ),
 
                 widget.Spacer(),
-                widget.TextBox(
-                    "",
-                    foreground='1db954',
-                    fontsize=22
-                ),
-                widget.Mpris2(
-                    format='{xesam:artist} - {xesam:title}',
-                    font='Circular Std Bold',
-                    foreground='1db954',
-                    paused_text='{xesam:artist} - {xesam:title}'
-                ),
+                # widget.TextBox(
+                #     "",
+                #     foreground='1db954',
+                #     fontsize=22
+                # ),
+                # widget.Mpris2(
+                #     format='{xesam:artist} - {xesam:title}',
+                #     font='Circular Std Bold',
+                #     foreground='1db954',
+                #     paused_text='{xesam:artist} - {xesam:title}'
+                # ),
                 widget.Spacer(),
 
                 widget.Net(
