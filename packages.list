@@ -4,10 +4,7 @@ cmake
 ninja
 curl
 gcc
-rust
 git
-github-cli
-xorg
 unzip
 gzip
 ripgrep
@@ -16,16 +13,9 @@ stow
 tree
 npm
 
-picom
-neovim
-alacritty
+kitty
 firefox
-rofi
-qtile
-python-psutil
-python-dbus-next
 
 ttf-ibmplex-mono-nerd
 ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
-ttf-caskaydia-code-nerd

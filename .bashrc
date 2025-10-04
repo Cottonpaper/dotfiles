@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export PATH="$PATH:$HOME/.local/bin"
+
 alias ls='ls -la --group-directories-first --color=auto'
 alias cl='clear'
 alias shutd='sudo shutdown now'
@@ -35,6 +37,6 @@ blueprompt="${BOLD}${BLUE}\u${RESET}[\W] ${BOLD}${BLUE}\$${RESET} "
 yellowprompt="${BOLD}${YELLOW}\u${RESET}[\W] ${BOLD}${YELLOW}\$${RESET} "
 magentaprompt="${BOLD}${MAGENTA}\u${RESET}[\W] ${BOLD}${MAGENTA}\$${RESET} "
 
-PS1=$blueprompt
+PS1=$yellowprompt
 
 # https://www.youtube.com/watch?v=e4ujS1er1r0

@@ -1,0 +1,14 @@
+{
+	"output": "HDMI-A-1",
+    "layer": "top",
+	"position": "top",
+	"height": 36,
+
+    "modules-center": [
+		"hyprland/workspaces",
+	],
+	"hyprland/workspaces": {
+		"active-only": false,
+	}
+}
+

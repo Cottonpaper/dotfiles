@@ -1,0 +1,37 @@
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "Hurmit Nerd Font Mono";
+	font-size: 18px;
+	font-weight: bold;
+}
+
+window#waybar {
+	color: #d3c6aa;
+	background: rgba (39, 46, 51, 1);
+	background-color: rgba (39, 46, 51, 1);
+}
+
+#workspaces button {
+	color: #d3c6aa;
+}
+
+#workspaces button.active {
+	color: #a7c080;
+}
+
+#tray {
+	padding: 0px 0px;
+}
+
+#wireplumber {
+	font-size: 28px;
+}
+
+#clock {
+	padding: 0px 22px;
+}
+
+#custom-power {
+	padding: 0px 22px;
+}

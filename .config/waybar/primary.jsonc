@@ -1,0 +1,82 @@
+{
+	"output": "DP-2",
+    "layer": "top",
+	"position": "top",
+	"height": 40,
+
+    "modules-center": [
+		"hyprland/workspaces",
+	],
+    "modules-right": [
+		"tray",
+		"clock",
+		"wireplumber",
+		"custom/power",
+	],
+	"modules-left": [
+		"wlr/taskbar",
+	],
+
+    "clock": {
+		"format": "{:%H:%M}",
+        "format-alt": "{:%A, %B %d, %Y (%R)}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+			"mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+				"months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+		},
+        "actions": {
+			"on-click-right": "mode",
+            "on-scroll-up": "tz_up",
+            "on-scroll-down": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+	"wlr/taskbar": {
+		"format": "{icon}",
+		"icon-size": 18,
+		"icon-theme": "Numix-Circle",
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"ignore-list": [
+		   ""
+		],
+		"app_ids-mapping": {
+		  "firefoxdeveloperedition": "firefox-developer-edition"
+		},
+		"rewrite": {
+			"Firefox Web Browser": "Firefox",
+			"Foot Server": "Terminal"
+		}
+	},
+
+	"wireplumber": {
+		"format": "",
+		"format-muted": "",
+		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+	},
+
+	"custom/power": {
+		"format": "{}",
+		"exec": "~/.config/waybar/scripts/power.sh status",
+		"on-click": "~/.config/waybar/scripts/power.sh toggle",
+		"return-type": "json",
+		"interval": 1,
+	},
+
+	"hyprland/workspaces": {
+		"active-only": false,
+	},
+}
