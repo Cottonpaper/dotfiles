@@ -12,10 +12,14 @@ fd
 stow
 tree
 npm
+wlr-randr
+fzf
 
 kitty
 firefox
+waybar
 
 ttf-ibmplex-mono-nerd
 ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
+noto-fonts-cjk

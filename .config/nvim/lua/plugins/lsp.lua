@@ -9,7 +9,8 @@ return {
 			highlight = {
 				enable = true,
 				additional_vim_regex_highlighting = false,
-			}}
+			},
+			indent = { enable = true }}
 	    end
 	},
 	{
@@ -23,6 +24,21 @@ return {
 			require("mason-lspconfig").setup {
 				ensure_installed = { "clangd", "lua_ls" },
 			}
+		end
+	},
+	{
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		dependencies = {"hrsh7th/cmp-nvim-lsp"},
+		config = function()
+			local cmp = require("cmp")
+			cmp.setup({
+				mapping = cmp.mapping.preset.insert({
+					["<CR>"] = cmp.mapping.confirm({select = true}),
+					["<C-Space>"] = cmp.mapping.complete()
+				}),
+				sources = {{name = "nvim_lsp"}}
+			})
 		end
 	},
 	{
@@ -57,5 +73,17 @@ return {
 		'windwp/nvim-autopairs',
 		event = "InsertEnter",
 		config = true
+	},
+	{
+		'windwp/nvim-ts-autotag',
+		config = function()
+			require('nvim-ts-autotag').setup({
+				opts = {
+					enable_close = true,
+					enable_rename = true,
+					enable_close_on_slash = false,
+				}
+			})
+		end
 	},
 }

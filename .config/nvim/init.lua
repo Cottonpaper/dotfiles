@@ -1,3 +1,3 @@
 require("main.lazy")
 
-vim.cmd([[colorscheme everforest]])
+vim.cmd([[colorscheme rose-pine]])

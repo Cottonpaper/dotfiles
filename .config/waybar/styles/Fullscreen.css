@@ -1,0 +1,44 @@
+@import url("../themes/RosePine.css");
+
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "Hurmit Nerd Font Mono";
+	font-size: 18px;
+	font-weight: bold;
+	padding: 0px 8px;
+}
+
+window#waybar {
+	color: @fg;
+	background-color: @bg;
+
+	min-height: 50px;
+}
+
+#workspaces button {
+	color: @fg;
+	padding: 0px 0px;
+}
+
+#workspaces button.active {
+	color: @fg;
+}
+
+#wireplumber {
+	font-size: 30px;
+}
+
+#custom-power {
+	font-size: 20px;
+	padding: 0px 12px;
+}
+
+#custom-layout {
+	font-size: 24px;
+	padding: 0px 12px;
+}
+
+#network {
+	font-size: 14px;
+}
